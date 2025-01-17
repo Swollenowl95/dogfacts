@@ -30,12 +30,20 @@
             margin: 10px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Interesting Facts About Dogs</h1>
         <div id="facts-container"></div>
+        <button id="replace-facts-button">Replace Facts</button>
     </div>
     <script>
         const facts = [
@@ -71,13 +79,58 @@
             }
         ];
 
-        const factsContainer = document.getElementById('facts-container');
+        const newFacts = [
+            {
+                "fact": "Dogs have been known to help reduce stress and anxiety in their owners."
+            },
+            {
+                "fact": "The Basenji dog is known as the 'barkless dog' because it doesn't bark like other dogs."
+            },
+            {
+                "fact": "Dogs can learn over 165 words, signs, and signals."
+            },
+            {
+                "fact": "The world's oldest known breed is the Saluki, which dates back to ancient Egypt."
+            },
+            {
+                "fact": "Dogs sweat through their paws and pant to cool down."
+            },
+            {
+                "fact": "The Labrador Retriever has been the most popular dog breed in the United States for many years."
+            },
+            {
+                "fact": "Dogs have a unique nose print, similar to a human fingerprint."
+            },
+            {
+                "fact": "The Greyhound is the fastest dog breed, capable of reaching speeds up to 45 mph."
+            },
+            {
+                "fact": "Dogs can see in the dark better than humans due to a special membrane in their eyes."
+            },
+            {
+                "fact": "The Chihuahua is the smallest dog breed, while the Great Dane is the largest."
+            }
+        ];
 
-        facts.forEach(item => {
-            const factDiv = document.createElement('div');
-            factDiv.className = 'fact';
-            factDiv.textContent = item.fact;
-            factsContainer.appendChild(factDiv);
+        const factsContainer = document.getElementById('facts-container');
+        const replaceFactsButton = document.getElementById('replace-facts-button');
+
+        function displayFacts(factsArray) {
+            factsContainer.innerHTML = ''; // Clear existing facts
+            factsArray.forEach(item => {
+                const factDiv = document.createElement('div');
+                factDiv.className = 'fact';
+                factDiv.textContent = item.fact;
+                factsContainer.appendChild(factDiv);
+            });
+        }
+
+        // Initial display of facts
+        displayFacts(facts);
+
+        // Event listener for the button
+        replaceFactsButton.addEventListener('click', () => {
+            displayFacts(newFacts);
         });
     </script>
 </body>
