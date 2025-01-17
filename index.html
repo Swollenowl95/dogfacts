@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4a4a4a;
+        }
+
+        .fact {
+            background-color: #e2e2e2;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Interesting Facts About Dogs</h1>
+        <div id="facts-container"></div>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Dogs were domesticated from wolves around 20,000 to 40,000 years ago, making them one of the first domesticated animals."
+            },
+            {
+                "fact": "There are over 340 different dog breeds recognized worldwide, each with unique characteristics and traits."
+            },
+            {
+                "fact": "A dog's sense of smell is approximately 10,000 to 100,000 times more sensitive than that of humans, allowing them to detect scents from great distances."
+            },
+            {
+                "fact": "Dogs communicate through a combination of vocalizations, body language, and facial expressions. They can understand human emotions and respond accordingly."
+            },
+            {
+                "fact": "The average lifespan of a dog varies by breed, but most dogs live between 10 to 15 years. Smaller breeds tend to live longer than larger breeds."
+            },
+            {
+                "fact": "Dogs are known for their intelligence and can learn a variety of commands and tricks. Some breeds, like Border Collies, are considered the most intelligent."
+            },
+            {
+                "fact": "Dogs are pack animals and thrive on social interaction, whether with humans or other dogs. They often form strong bonds with their owners."
+            },
+            {
+                "fact": "Dogs have an exceptional sense of hearing and can hear sounds at frequencies as high as 65,000 Hz, while humans can only hear up to about 20,000 Hz."
+            },
+            {
+                "fact": "A dog's tail wagging can indicate different emotions. For example, a wagging tail held high often signifies happiness, while a low wagging tail may indicate submission or uncertainty."
+            },
+            {
+                "fact": "Dogs are often trained as service animals to assist people with disabilities, including guiding the visually impaired, alerting the hearing impaired, and providing emotional support."
+            }
+        ];
+
+        const factsContainer = document.getElementById('facts-container');
+
+        facts.forEach(item => {
+            const factDiv = document.createElement('div');
+            factDiv.className = 'fact';
+            factDiv.textContent = item.fact;
+            factsContainer.appendChild(factDiv);
+        });
+    </script>
+</body>
+</html>
